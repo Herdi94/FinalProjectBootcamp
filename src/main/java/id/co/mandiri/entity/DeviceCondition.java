@@ -31,8 +31,4 @@ public class DeviceCondition {
     @Type(type = "text")
     @Column(name = "description")
     private String description;
-
-    /*@JsonIgnore
-    @OneToMany(mappedBy = "device_condition")
-    private List<Inventory> listInventory = new ArrayList<>();*/
 }

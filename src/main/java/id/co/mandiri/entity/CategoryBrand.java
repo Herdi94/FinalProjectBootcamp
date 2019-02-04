@@ -25,7 +25,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@ToString(exclude = "listInventory")
 public class CategoryBrand {
 
     @Id
@@ -42,7 +41,4 @@ public class CategoryBrand {
     @Column(name = "description")
     private String description;
 
-    /*@JsonIgnore
-    @OneToMany(mappedBy = "brand_category")
-    private List<Inventory> listInventory = new ArrayList<>();*/
 }

@@ -25,9 +25,5 @@ public class Device {
     @Column(name = "name", nullable = false, length = 150)
     private String name;
 
-    /*//@JsonIgnore
-    @OneToMany(mappedBy = "inventory")
-    //private Set inventory;
-    private Array inventory;*/
     
 }

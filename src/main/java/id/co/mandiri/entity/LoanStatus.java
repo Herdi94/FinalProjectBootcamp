@@ -17,7 +17,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@ToString(exclude = "listInventory")
 public class LoanStatus {
 
     @Id
@@ -28,7 +27,4 @@ public class LoanStatus {
     @Column(name = "name", nullable = false, length = 150)
     private String name;
 
-    /*@JsonIgnore
-    @OneToMany(mappedBy = "loan_status")
-    private List<Inventory> listInventory = new ArrayList<>();*/
 }

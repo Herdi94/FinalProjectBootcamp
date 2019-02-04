@@ -17,7 +17,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@ToString(exclude = "listInventory")
 public class CapacityUnit {
 
     @Id
@@ -31,8 +30,4 @@ public class CapacityUnit {
     @Type(type = "text")
     @Column(name = "description")
     private String description;
-
-   /* @JsonIgnore
-    @OneToMany(mappedBy = "capacity_unit")
-    private List<Inventory> listInventory = new ArrayList<>();*/
 }
