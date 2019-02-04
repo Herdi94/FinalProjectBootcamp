@@ -3,8 +3,8 @@ package id.co.mandiri.service;
 import com.maryanto.dimas.plugins.web.commons.ui.datatables.DataTablesRequest;
 import com.maryanto.dimas.plugins.web.commons.ui.datatables.DataTablesResponse;
 import com.maryanto.dimas.plugins.web.commons.ui.datatables.service.ServiceCrudDataTablesPattern;
-import id.co.mandiri.dao.DeviceDao;
-import id.co.mandiri.entity.Device;
+import id.co.mandiri.dao.InventoryDao;
+import id.co.mandiri.entity.Inventory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,49 +13,49 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
-public class DeviceService implements ServiceCrudDataTablesPattern<Device, String> {
+public class InventoryService implements ServiceCrudDataTablesPattern<Inventory, String> {
 
     @Autowired
-    private DeviceDao deviceDao;
+    private InventoryDao InventoryDao;
 
     @Override
-    public Device findId(String s) {
-        return deviceDao.findId(s);
+    public Inventory findId(String s) {
+        return InventoryDao.findId(s);
     }
 
     @Override
-    public List<Device> findAll() {
+    public List<Inventory> findAll() {
         return null;
     }
 
     @Override
     @Transactional
-    public Device save(Device value) {
-        return deviceDao.save(value);
+    public Inventory save(Inventory value) {
+        return InventoryDao.save(value);
     }
 
     @Override
     @Transactional
-    public Device update(Device value) {
-        return deviceDao.update(value);
+    public Inventory update(Inventory value) {
+        return InventoryDao.update(value);
     }
 
     @Override
     @Transactional
-    public boolean remove(Device value) {
-        return deviceDao.remove(value);
+    public boolean remove(Inventory value) {
+        return InventoryDao.remove(value);
     }
 
     @Override
     @Transactional
     public boolean removeById(String s) {
-        return deviceDao.removeById(s);
+        return InventoryDao.removeById(s);
     }
 
     @Override
-    public DataTablesResponse<Device> datatables(DataTablesRequest<Device> params) {
-        List<Device> values = deviceDao.datatables(params);
-        Long rowCount = deviceDao.datatables(params.getValue());
+    public DataTablesResponse<Inventory> datatables(DataTablesRequest<Inventory> params) {
+        List<Inventory> values = InventoryDao.datatables(params);
+        Long rowCount = InventoryDao.datatables(params.getValue());
         return new DataTablesResponse<>(values, params.getDraw(), rowCount, rowCount);
     }
 }

@@ -12,13 +12,21 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*create table brand_category(
+        id varchar(64) not null primary key,
+        name varchar(50) not null,
+        kode varchar(64) not null,
+        description text not null
+        )*/
+
 @Entity
-@Table(name = "device_category")
+@Table(name = "brand_category")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 //@ToString(exclude = "listInventory")
-public class CategoryDevice {
+public class CategoryBrand {
 
     @Id
     @GenericGenerator(name = "uuid_gen", strategy = "uuid2")
@@ -27,12 +35,14 @@ public class CategoryDevice {
     private String id;
     @Column(name = "name", nullable = false, length = 150)
     private String name;
+    @Column(name = "code", nullable = false, length = 150)
+    private String code;
     @Lob
     @Type(type = "text")
     @Column(name = "description")
     private String description;
 
-  /*  @JsonIgnore
-    @OneToMany(mappedBy = "device_category")
+    /*@JsonIgnore
+    @OneToMany(mappedBy = "brand_category")
     private List<Inventory> listInventory = new ArrayList<>();*/
 }

@@ -3,8 +3,8 @@ package id.co.mandiri.service;
 import com.maryanto.dimas.plugins.web.commons.ui.datatables.DataTablesRequest;
 import com.maryanto.dimas.plugins.web.commons.ui.datatables.DataTablesResponse;
 import com.maryanto.dimas.plugins.web.commons.ui.datatables.service.ServiceCrudDataTablesPattern;
-import id.co.mandiri.dao.DeviceDao;
-import id.co.mandiri.entity.Device;
+import id.co.mandiri.dao.CategoryBrandDao;
+import id.co.mandiri.entity.CategoryBrand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,49 +13,49 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
-public class DeviceService implements ServiceCrudDataTablesPattern<Device, String> {
+public class CategoryBrandService implements ServiceCrudDataTablesPattern<CategoryBrand, String> {
 
     @Autowired
-    private DeviceDao deviceDao;
+    private CategoryBrandDao categoryDao;
 
     @Override
-    public Device findId(String s) {
-        return deviceDao.findId(s);
+    public CategoryBrand findId(String s) {
+        return categoryDao.findId(s);
     }
 
     @Override
-    public List<Device> findAll() {
+    public List<CategoryBrand> findAll() {
         return null;
     }
 
     @Override
     @Transactional
-    public Device save(Device value) {
-        return deviceDao.save(value);
+    public CategoryBrand save(CategoryBrand value) {
+        return categoryDao.save(value);
     }
 
     @Override
     @Transactional
-    public Device update(Device value) {
-        return deviceDao.update(value);
+    public CategoryBrand update(CategoryBrand value) {
+        return categoryDao.update(value);
     }
 
     @Override
     @Transactional
-    public boolean remove(Device value) {
-        return deviceDao.remove(value);
+    public boolean remove(CategoryBrand value) {
+        return categoryDao.remove(value);
     }
 
     @Override
     @Transactional
     public boolean removeById(String s) {
-        return deviceDao.removeById(s);
+        return categoryDao.removeById(s);
     }
 
     @Override
-    public DataTablesResponse<Device> datatables(DataTablesRequest<Device> params) {
-        List<Device> values = deviceDao.datatables(params);
-        Long rowCount = deviceDao.datatables(params.getValue());
+    public DataTablesResponse<CategoryBrand> datatables(DataTablesRequest<CategoryBrand> params) {
+        List<CategoryBrand> values = categoryDao.datatables(params);
+        Long rowCount = categoryDao.datatables(params.getValue());
         return new DataTablesResponse<>(values, params.getDraw(), rowCount, rowCount);
     }
 }

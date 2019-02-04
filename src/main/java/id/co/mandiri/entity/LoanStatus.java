@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "device_category")
+@Table(name = "loan_status")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 //@ToString(exclude = "listInventory")
-public class CategoryDevice {
+public class LoanStatus {
 
     @Id
     @GenericGenerator(name = "uuid_gen", strategy = "uuid2")
@@ -27,12 +27,8 @@ public class CategoryDevice {
     private String id;
     @Column(name = "name", nullable = false, length = 150)
     private String name;
-    @Lob
-    @Type(type = "text")
-    @Column(name = "description")
-    private String description;
 
-  /*  @JsonIgnore
-    @OneToMany(mappedBy = "device_category")
+    /*@JsonIgnore
+    @OneToMany(mappedBy = "loan_status")
     private List<Inventory> listInventory = new ArrayList<>();*/
 }
